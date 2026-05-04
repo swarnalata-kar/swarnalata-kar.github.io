@@ -372,18 +372,27 @@ body, a, button, .theme-option, .hero-subject-png {
 }
 
 .custom-cursor {
-    width: 8px;
-    height: 8px;
+    width: 5px;
+    height: 5px;
     background-color: var(--text-primary);
-    transition: width 0.2s, height 0.2s;
+    opacity: 0;
+    transition: width 0.2s, height 0.2s, opacity 0.3s;
 }
 
 .custom-cursor-follower {
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 28px;
     border: 1px solid var(--text-primary);
-    opacity: 0.5;
-    transition: width 0.2s, height 0.2s, opacity 0.2s;
+    opacity: 0;
+    transition: width 0.2s, height 0.2s, opacity 0.3s;
+}
+
+.custom-cursor.visible {
+    opacity: 1;
+}
+
+.custom-cursor-follower.visible {
+    opacity: 0.4;
 }
 
 .custom-cursor.hover {
@@ -392,8 +401,8 @@ body, a, button, .theme-option, .hero-subject-png {
 }
 
 .custom-cursor-follower.hover {
-    width: 60px;
-    height: 60px;
+    width: 42px;
+    height: 42px;
     background: var(--text-primary);
     opacity: 0.1;
     border-width: 0;
