@@ -235,6 +235,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        // Hide cursor when mouse leaves the window
+        document.addEventListener('mouseleave', () => {
+            customCursor.style.opacity = '0';
+        });
+        document.addEventListener('mousemove', () => {
+            customCursor.style.opacity = '1';
+        }, { once: false });
+
         window.updateCustomCursor = (theme) => {
             // Reset styles
             customCursor.style.backgroundImage = 'none';
@@ -496,6 +504,15 @@ document.addEventListener('DOMContentLoaded', () => {
             document.addEventListener("mousemove", function(e) {
                 mouseX = e.clientX;
                 mouseY = e.clientY;
+                // Show cursors on first move inside window
+                cursor.classList.add('visible');
+                cursorFollower.classList.add('visible');
+            });
+
+            // Hide when mouse exits the browser window
+            document.addEventListener('mouseleave', () => {
+                cursor.classList.remove('visible');
+                cursorFollower.classList.remove('visible');
             });
 
             const hoverElements = document.querySelectorAll("a, button, .hero-subject-png, .theme-option");
